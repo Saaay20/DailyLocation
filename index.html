@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DailyGeo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+
+  <!-- SPLASH SCREEN -->
+  <div id="splash">
+    <div class="splash-inner">
+      <div class="logo-mark">◈</div>
+      <h1>DailyGeo</h1>
+      <p class="tagline">One location. One chance. Every day.</p>
+      <div class="daily-badge">
+        <span id="today-label"></span>
+      </div>
+      <button id="play-btn">Play Today's Round →</button>
+      <div class="streak-row">
+        <span>🔥 Streak: <strong id="streak-count">0</strong></span>
+        <span>Best: <strong id="best-score">—</strong></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="game" class="hidden">
+    <div id="street-view-container">
+      <div id="street-view"></div>
+      <div class="hud">
+        <div class="round-info">
+          <span class="mono" id="hud-date"></span>
+        </div>
+        <button id="toggle-map-btn">Show Map</button>
+      </div>
+    </div>
+
+    <div id="map-panel" class="hidden">
+      <div id="guess-map"></div>
+      <div class="map-actions">
+        <p class="hint">Click on the map to place your pin</p>
+        <button id="submit-guess-btn" disabled>Submit Guess</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="result" class="hidden">
+    <div class="result-inner">
+      <div id="result-map"></div>
+      <div class="result-info">
+        <div class="score-display">
+          <span class="score-label">Score</span>
+          <span class="score-number" id="final-score">0</span>
+          <span class="score-max">/ 5000</span>
+        </div>
+        <div class="distance-display">
+          <span class="mono" id="distance-text"></span>
+        </div>
+        <div class="wordle-grid" id="score-grid"></div>
+        <button id="share-btn">Copy Result 📋</button>
+        <p class="next-round">Next round in: <strong id="countdown"></strong></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Replace with your actual Google Maps API key
+    window.GOOGLE_MAPS_API_KEY = 'YOUR_API_KEY_HERE';
+  </script>
+  <script src="/src/main.js" type="module"></script>
+</body>
+</html>
